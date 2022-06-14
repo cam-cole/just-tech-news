@@ -5,7 +5,8 @@ const sequelize = require('./config/connection');
 const exp = require('constants');
 const exphbs = require('express-handlebars');
 const { appendFileSync } = require('fs');
-const hbs = exphbs.create({});
+const helpers = require('./utils/helpers');
+const hbs = exphbs.create({ helpers });
 
 const app = express();
 const PORT = process.env.PORT || 3001;
